@@ -16,4 +16,6 @@ const MyFirstComponent = function() {
   );
 };
 
+let x = 5;
+
 ReactDOM.render(ce(MyFirstComponent), document.getElementById('app'));

@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/arielfonticiella/.nvm/versions/node/v7.2.0/bin/node /Users/arielfonticiella/.nvm/versions/node/v7.2.0/bin/yarn format
+  /Users/arielfonticiella/.nvm/versions/node/v7.2.0/bin/node /Users/arielfonticiella/.nvm/versions/node/v7.2.0/bin/yarn lint
 
 PATH: 
   /Users/arielfonticiella/.nvm/versions/node/v7.2.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
@@ -17,7 +17,8 @@ npm manifest:
   {
     "scripts": {
       "api": "node ratingsAPI.js",
-      "format": "prettier --list-different --single-quote --print-width=120 \"js/**/*.{js,jsx}\""
+      "format": "prettier --write --single-quote --print-width=120 --parser=flow --tab-width=2 \"js/**/*.{js,jsx}\"",
+      "lint": "eslint **/*.{js,jsx} --quiet"
     },
     "dependencies": {
       "axios": "0.16.1",
@@ -63,7 +64,7 @@ npm manifest:
       "eslint-plugin-flowtype": "2.33.0",
       "eslint-plugin-import": "2.3.0",
       "eslint-plugin-jsx-a11y": "5.0.3",
-      "eslint-plugin-prettier": "2.1.1",
+      "eslint-plugin-prettier": "^2.6.0",
       "eslint-plugin-react": "7.0.1",
       "flow-bin": "0.47.0",
       "jest": "20.0.4",
@@ -5601,7 +5602,7 @@ Trace:
   Error: Command failed.
   Exit code: 1
   Command: sh
-  Arguments: -c prettier --list-different --single-quote --print-width=120 "js/**/*.{js,jsx}"
+  Arguments: -c eslint **/*.{js,jsx} --quiet
   Directory: /Users/arielfonticiella/Desktop/React-Intro
   Output:
   

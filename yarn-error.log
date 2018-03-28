@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/arielfonticiella/.nvm/versions/node/v7.2.0/bin/node /Users/arielfonticiella/.nvm/versions/node/v7.2.0/bin/yarn webpack
+  /Users/arielfonticiella/.nvm/versions/node/v7.2.0/bin/node /Users/arielfonticiella/.nvm/versions/node/v7.2.0/bin/yarn lint
 
 PATH: 
   /Users/arielfonticiella/.nvm/versions/node/v7.2.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
@@ -17,7 +17,11 @@ npm manifest:
   {
     "scripts": {
       "api": "node ratingsAPI.js",
-      "format": "prettier --write --single-quote --print-width=120 --parser=flow --tab-width=2 \"js/**/*.{js,jsx}\""
+      "build": "webpack",
+      "format":
+        "prettier --write --single-quote --print-width=120 --parser=flow --tab-width=2 \"js/**/*.{js,jsx}\"",
+      "lint": "exlint **/*.{js,jsx} --quiet",
+      "watch": "webpack --watch"
     },
     "dependencies": {
       "axios": "0.16.1",
@@ -879,7 +883,7 @@ Lockfile:
     dependencies:
       babel-plugin-jest-hoist "^20.0.3"
   
-  babel-preset-react@6.24.1:
+  babel-preset-react@^6.24.1:
     version "6.24.1"
     resolved "https://registry.yarnpkg.com/babel-preset-react/-/babel-preset-react-6.24.1.tgz#ba69dfaea45fc3ec639b6a4ecea6e17702c91380"
     dependencies:
@@ -5554,9 +5558,9 @@ Lockfile:
 
 Trace: 
   Error: Command failed.
-  Exit code: 2
+  Exit code: 127
   Command: sh
-  Arguments: -c /Users/arielfonticiella/Desktop/React-Intro/node_modules/.bin/webpack
+  Arguments: -c exlint **/*.{js,jsx} --quiet
   Directory: /Users/arielfonticiella/Desktop/React-Intro
   Output:
   

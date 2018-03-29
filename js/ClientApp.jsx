@@ -1,23 +1,18 @@
 import React from "react";
 import { render } from "react-dom";
 
-const MyTitle = function(props) {
-  return (
-    <div>
-      <h1> style={{ color: props.color }}props.title}</h1>
-    </div>
-  );
-};
+// This will be the overarching component for our app.
+const App = () => (
+  // With arrow-functions, if it's a one-liner, it will be an "implicit return", so we don't use curley braces. The Airbnb ESlint rules require that if you have a function that just immediately returns, it must use the "implicit return".
 
-const MyFirstComponent = function() {
-  return (
-    <div id="my-first-component">
-      <MyTitle title="Game of Thrones" color="YellowGreen" />
-      <MyTitle title="Stranger Things" color="GreenYellow" />
-      <MyTitle title="Rick and Morty" color="LimewGreen" />
-      <MyTitle title="House of Cards" color="peru" />
+  // Because we are still writing JavaScript with JSX, we cannot use the keyword "class" as it is a reserved word in JavaScript. Instead we will use the keyword "className".
+  <div className="app">
+    <div className="landing">
+      <h1>vidChll</h1>
+      <input type="text" placeholder="Search" />
+      <a> or Browse All</a>
     </div>
-  );
-};
+  </div>
+);
 
-render(<MyFirstComponent />, document.getElementById("app"));
+render(<App />, document.getElementById("app"));
